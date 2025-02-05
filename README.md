@@ -1,0 +1,1 @@
+Go to @/src/test/resources/testing.xml and run it.
