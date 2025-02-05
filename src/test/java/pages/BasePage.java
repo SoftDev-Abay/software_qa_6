@@ -1,4 +1,3 @@
-// BasePage
 
 package pages;
 

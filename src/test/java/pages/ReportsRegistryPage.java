@@ -1,4 +1,3 @@
-// File: src/test/java/pages/ReportsRegistryPage.java
 package pages;
 
 import org.openqa.selenium.By;
@@ -31,11 +30,9 @@ public class ReportsRegistryPage extends BasePage {
     public List<List<String>> searchInRegistry(String searchValue, int columnIndex) {
         openReportsRegistry();
 
-        // Enter the search value and send the RETURN key to trigger the search
         enterText(SEARCH_INPUT, searchValue);
         driver.findElement(SEARCH_INPUT).sendKeys(Keys.RETURN);
 
-        // Locate and click the appropriate checkbox using the column index.
         String columnXpath = String.format(COLUMN_XPATH_TEMPLATE, columnIndex);
         By checkboxLocator = By.xpath(columnXpath);
         WebElement checkbox = waitForElementVisible(checkboxLocator);
@@ -43,18 +40,14 @@ public class ReportsRegistryPage extends BasePage {
             checkbox.click();
         }
 
-        // Wait for the results table to be visible.
         waitForElementVisible(RESULTS_TABLE);
 
-        // Wait until there is more than one row in the table.
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(drv -> drv.findElements(TABLE_ROWS).size() > 1);
 
-        // Re-locate table rows to ensure we have fresh elements.
         List<WebElement> tableRows = driver.findElements(TABLE_ROWS);
         List<List<String>> rowTexts = new ArrayList<>();
 
-        // Iterate over each row (starting at index 1 to skip header) and capture the text immediately.
         for (int i = 1; i < tableRows.size(); i++) {
             List<WebElement> cells = tableRows.get(i).findElements(By.tagName("td"));
             List<String> rowData = new ArrayList<>();

@@ -1,4 +1,3 @@
-// TemplateEditorPage
 
 package pages;
 

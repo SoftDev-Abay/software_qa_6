@@ -1,4 +1,3 @@
-// File: src/test/java/utils/ExcelUtils.java
 package utils;
 
 import org.apache.poi.ss.usermodel.*;
@@ -11,14 +10,6 @@ import java.util.List;
 
 public class ExcelUtils {
 
-    /**
-     * Reads data from the specified Excel file and sheet.
-     * It returns each row as a String array using DataFormatter to handle numeric cells.
-     *
-     * @param excelFileName The Excel file located in the classpath (e.g., "testdata.xlsx").
-     * @param sheetName     The name of the sheet to read from.
-     * @return A two-dimensional Object array that can be used as a TestNG DataProvider.
-     */
     public static Object[][] getExcelData(String excelFileName, String sheetName) {
         List<Object[]> data = new ArrayList<>();
         try {

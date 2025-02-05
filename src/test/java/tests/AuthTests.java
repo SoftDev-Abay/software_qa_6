@@ -1,4 +1,3 @@
-// File: src/test/java/tests/AuthTests.java
 package tests;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -6,11 +5,10 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import utils.ExcelUtils;  // Import the new ExcelUtils
+import utils.ExcelUtils;
 
 public class AuthTests extends BaseTest {
 
-    // DataProvider now reads test data from testdata.xlsx, sheet "loginData"
     @DataProvider(name = "loginData")
     public Object[][] loginData() {
         return ExcelUtils.getExcelData("testdata.xlsx", "loginData");

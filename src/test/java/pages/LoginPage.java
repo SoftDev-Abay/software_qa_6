@@ -1,4 +1,3 @@
-//LoginPage
 
 package pages;
 

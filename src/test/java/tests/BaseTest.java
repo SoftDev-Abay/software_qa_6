@@ -1,4 +1,3 @@
-// BaseTEst
 
 package tests;
 

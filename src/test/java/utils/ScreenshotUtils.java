@@ -1,4 +1,3 @@
-// ScreenshotUtils
 
 package utils;
 
